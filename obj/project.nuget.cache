@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "r6HQWVJnVyztN+iPate5NtccLdbPSH+nKVbMWiaRwycn/lXXhH1Fj7+mjGb0XFTGN09kaP6VjNQ1jtArffgpmQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\RenzoIbañez\\source\\repos\\DroneServiceDelivery\\DroneServiceDelivery.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\RenzoIbañez\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\RenzoIbañez\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
