@@ -6,10 +6,13 @@ namespace DroneServiceDelivery.BusinessLogic
     public class DroneDeliveryService : IDroneDeliveryService
     {
         List<Location> totalLocations;
+        List<Drone> orderedDrones;
         public void ExecuteDelivery(List<Drone> drones, List<Location> locations)
         {
             // Sort locations by weight in ascending order
             totalLocations = locations.OrderBy(l => l.Weight).ToList();
+            // Sort drones by max weight so all the drones will get deliveries
+            orderedDrones = drones.OrderByDescending(d => d.MaxWeight).ToList();
             bool isThereMoreLocations = true;
             int tripNumber = 0;
 
@@ -27,7 +30,7 @@ namespace DroneServiceDelivery.BusinessLogic
             // Assign deliveries to drones
             foreach (var location in totalLocations.ToList())
             {
-                foreach (Drone drone in drones)
+                foreach (Drone drone in orderedDrones.ToList())
                 {
                     //if drone still have weight capacity and it to the trip
                     if (drone.CanCarry(location.Weight))
@@ -41,7 +44,7 @@ namespace DroneServiceDelivery.BusinessLogic
             }
 
             // Print deliveries for each drone
-            foreach (Drone drone in drones)
+            foreach (Drone drone in orderedDrones.ToList())
             {
                 //Clean the currentWeight of the drone so it can add new deliveries
                 drone.CurrentWeight = 0;
